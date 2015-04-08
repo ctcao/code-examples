@@ -5,6 +5,11 @@ public class IntArrayList {
     private int[] data;
     private int size;
 
+    public IntArrayList() {
+    		data = new int[10];
+    		size = 0;
+    }
+
     public IntArrayList(int capacity) {
         data = new int[capacity];
         size = 0;
