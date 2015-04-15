@@ -51,7 +51,9 @@ public class SLinkedList {
 			// check if it is the first element to remove
 			if (index == 0) {
 				head = head.getNext();
-				tail = null;
+				if (head == null) {
+					tail = null;
+				}
 			} else {
 				Node prev = head;
 				for(int i = 0; i < index - 1; i++) {
