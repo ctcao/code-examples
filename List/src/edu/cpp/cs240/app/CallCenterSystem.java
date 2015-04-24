@@ -7,7 +7,7 @@ import edu.cpp.cs240.IntList;
 public class CallCenterSystem {
 
     IntList customerList = new IntArrayList();
-    //IntList customerList = new IntSLinkedList();
+//    IntList customerList = new IntSLinkedList();
 
     public void putCustomerRequest(int customerId) {
         customerList.add(customerId);
