@@ -1,4 +1,6 @@
-package edu.cpp.cs240;
+package edu.cpp.cs240.stack;
+
+import edu.cpp.cs240.Node;
 
 public class LinkedListBasedIntStack implements IntStack {
 
