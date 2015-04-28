@@ -2,7 +2,10 @@ package edu.cpp.cs240.stack;
 
 public class IntStackTest {
 
+
 	public static void main(String[] args) {
+
+
 		IntStack intStack = new LinkedListBasedIntStack();
 
 		intStack.push(5);
