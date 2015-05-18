@@ -32,13 +32,11 @@ public class IntHashTableEntryListImpl implements IntHashTable {
 		int indexToPut = hash(key);
 		IntHashEntry cursor = dataArray[indexToPut];
 		if (cursor != null) {
-			IntHashEntry prev = null;
-			while(cursor != null && cursor.getKey() != key) {
-				prev = cursor;
+			while(cursor.getNext() != null && cursor.getKey() != key) {
 				cursor = cursor.getNext();
 			}
-			if (cursor == null) {
-				prev.setNext(entry);
+			if (cursor.getKey() != key) {
+				cursor.setNext(entry);
 			} else {
 				cursor.setValue(value);
 			}
