@@ -25,6 +25,7 @@ public class HashTableImpl<K, V> implements HashTable<K, V> {
 	}
 
 	private int hash(K key) {
+		System.out.println(key + " " + Math.abs(key.hashCode()) % dataArray.length);
 		return Math.abs(key.hashCode()) % dataArray.length;
 	}
 
@@ -35,7 +36,7 @@ public class HashTableImpl<K, V> implements HashTable<K, V> {
 		HashEntry<K, V> cursor = dataArray[indexToPut];
 		if (cursor != null) {
 			HashEntry<K, V> prev = null;
-			while(cursor != null && cursor.getKey() != key) {
+			while(cursor != null && !cursor.getKey().equals(key)) {
 				prev = cursor;
 				cursor = cursor.getNext();
 			}
@@ -54,7 +55,7 @@ public class HashTableImpl<K, V> implements HashTable<K, V> {
 	public V get(K key) {
 		int indexToGet = hash(key);
 		HashEntry<K, V> cursor = dataArray[indexToGet];
-		while(cursor != null && cursor.getKey() != key) {
+		while(cursor != null && !cursor.getKey().equals(key)) {
 			cursor = cursor.getNext();
 		}
 		if (cursor == null) {
@@ -73,7 +74,7 @@ public class HashTableImpl<K, V> implements HashTable<K, V> {
 		int indexToRemove = hash(key);
 		HashEntry<K, V> cursor = dataArray[indexToRemove];
 		HashEntry<K, V> prev = null;
-		while(cursor != null && cursor.getKey() != key) {
+		while(cursor != null && !cursor.getKey().equals(key)) {
 			prev = cursor;
 			cursor = cursor.getNext();
 		}
